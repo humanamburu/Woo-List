@@ -1,4 +1,4 @@
-# Wunderlist
+# WooList
 
 Simply application for task tracking.
 
