@@ -1,4 +1,4 @@
-var Info = angular.module('WunderlistControllers').controller('Info', ['$scope', 'personals', 'lists', '$state', '$stateParams', 'tasks', '$location', 'Upload', function ($scope, personals, lists, $state, $stateParams, tasks, $location, Upload) {
+var Info = angular.module('WunderlistControllers').controller('Info', ['$scope', 'personals', 'lists', '$state', '$stateParams', 'tasks', '$location', function ($scope, personals, lists, $state, $stateParams, tasks, $location) {
     $scope.task = {};
 
     $scope.newSubtask = {

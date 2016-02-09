@@ -1,10 +1,9 @@
 var Angular = require('../../../node_modules/angular/angular.js'),
     bootstrap = require('./libs/bootstrap.min.js'),
-    router = require('../../../node_modules/angular-ui-router/release/angular-ui-router.js'),
-    upload = require('../../../node_modules/ng-file-upload/dist/ng-file-upload-all.min.js');
+    router = require('../../../node_modules/angular-ui-router/release/angular-ui-router.js');
 
 var controllers = require('./controllers/main');
-var wunderlist = angular.module('Wunderlist', [router, 'WunderlistControllers', 'ngFileUpload']);
+var wunderlist = angular.module('Wunderlist', [router, 'WunderlistControllers']);
 var ngEnter = require('./directives/ngEnter');
 
 

@@ -495,7 +495,7 @@ li .thumb:hover {
 }
 
 ul.tasks li a.active-task {
-    background-color: rgba(145, 0, 200, 0.8);;
+    background-color: rgba(145, 0, 200, 0.95);;
 }
 
 .tasks li a.complete-task {

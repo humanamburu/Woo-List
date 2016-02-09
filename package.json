@@ -20,9 +20,7 @@
     "passport-local": "1.0.0",
     "cookie-parser": "1.4.0",
     "express-session": "1.12.1",
-    "connect-mongo": "1.1.0",
-    "ng-file-upload": "11.0.2",
-    "gridfs-stream": "1.1.1"
+    "connect-mongo": "1.1.0"
   },
   "devDependencies": {
     "webpack": "^1.12.9",
