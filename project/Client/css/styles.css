@@ -1,0 +1,622 @@
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/Lato.ttf")
+}
+
+@font-face {
+    font-family: FontAwesome;
+    src: url("../fonts/fontawesome-webfont.ttf")
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar:horizontal {
+    height: 8px;
+}
+
+a {
+    cursor: pointer;
+}
+
+.full {
+    background: url('pictures/background.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+}
+
+body {
+    font-family: Lato;
+    font-size: 13px;
+}
+
+.info {
+    background-color: #222;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 40px auto;
+    border-radius: 10px;
+}
+
+.center {
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+}
+
+.input-container input {
+    padding: 6px 6px 6px 35px;
+    z-index: 0;
+}
+
+.input-container i {
+    position: absolute;
+    color: #347ebf;
+    top: 4px;
+    left: 3px;
+    font-size: 20px;
+    padding: 2px;
+}
+
+body i {
+    padding-right: 20px;
+}
+
+.alert {
+    position: absolute;
+}
+
+bs-alert div {
+    width: 100%;
+    position: absolute;
+    bottom: -90px;
+}
+
+.success-center {
+    position: absolute;
+    top: 8%;
+    right: 10%;
+}
+
+.close {
+    display: none;
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+[ui-view].ng-enter {
+    left: 0;
+    right: 0;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+[ui-view].ng-enter {
+    opacity: 0;
+}
+
+[ui-view].ng-enter-active {
+    opacity: 1;
+}
+
+.main1 {
+    height: 100vh;
+    background: url("pictures/nature.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.main {
+    padding: 0;
+    height: 100vh;
+    background: url("pictures/nature.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.aside {
+
+    background-color: #ECF0F1;
+    height: 100vh;
+    overflow-y: auto;
+    padding-top: 20px;
+}
+
+.header {
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    background-color: #C0392B;
+}
+
+.footer-block {
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    margin-bottom: 10px;
+    z-index: 5;
+}
+
+.btn-red {
+    font-size: 14px;
+    color: #FFF;
+    background-color: #C0392B;
+    border-color: #C0392B;
+    transition: all 0.3s;
+    margin-top: 10px;
+    min-width: 110px;
+}
+
+.btn-red:hover {
+    color: #FFF;
+    background-color: #990d0d;
+    border-color: #c33b07;
+}
+
+.btn-blue {
+    font-size: 14px;
+    color: #FFF;
+    background-color: #347ebf;
+    border-color: #347ebf;
+    transition: all 0.3s;
+    margin-top: 10px;
+    min-width: 110px;
+}
+
+.btn-blue:hover {
+    color: #FFF;
+    background-color: #3363dd;
+    border-color: #3363dd;
+}
+
+.btn-red:active {
+    color: #FFF;
+}
+
+.add {
+    padding: 10px;
+    text-align: center;
+}
+
+.lists {
+    margin: 10px 0 10px 0;
+    padding-left: 0;
+}
+
+.lists li {
+    position: relative;
+    margin: 8px 10px 0 10px;
+    list-style: none;
+    color: white;
+    font-size: 14px;
+    -webkit-user-select: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.lists li:before {
+    position: absolute;
+    left: 30px;
+    bottom: 12px;
+    content: '\f0ca';
+    font-family: FontAwesome;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1.2em;
+    margin-right: 10px;
+}
+
+.lists li:hover {
+    background-color: #a130c8;
+}
+
+.lists a.active-list {
+    background-color: #9100c8;
+}
+
+.lists a.active-list:hover {
+    background-color: #9100c8;
+}
+
+.tasks {
+    vertical-align: top;
+    margin: 10px 0 10px 0;
+    padding-left: 0;
+    display: inline-block;
+    width: 70%;
+    text-align: right;
+    height: 85vh;
+}
+
+.tasks li {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    margin: 15px 10px 0 10px;
+    list-style: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.tasks li a {
+    padding: 12px 10px 11px 100px;
+    display: block;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    background-color: rgba(92, 184, 92, 0.83);;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.tasks li:hover {
+    background-color: rgba(145, 0, 200, 0.8);;
+
+}
+
+.tasks li a:hover {
+    background-color: #34962f;
+
+}
+
+
+.lists li a {
+    padding: 10px 10px 10px 40px;
+    display: block;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+    background-color: #4b964b;
+    transition: all 0.3s;
+    border-radius: 5px;
+}
+
+.lists li a:focus {
+    color: white;
+    text-decoration: none;
+    background-color: #9100c8;
+}
+
+.lists li a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #34962f;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+body ul .task-input-li {
+    font-size: 20px;
+    margin-bottom: 15px;
+    background-color: #4b964b;
+    padding: 12px 15px 12px 5px;
+}
+
+body ul .task-input-li i {
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+body ul .task-input-li:hover {
+    background-color: #4b964b;
+}
+
+.task-input {
+    border: none;
+    color: #000;
+    width: 95%;
+    padding: 5px 10px 5px 10px;
+    border-radius: 2px;
+}
+
+.left-aside {
+    overflow-y: auto;
+    border-radius: 10px 0 0 10px;
+    margin-top: 20px;
+    display: inline-block;
+    width: 25%;
+    background-color: #ECF0F1;
+    height: 90vh;
+    float: right;
+}
+
+.control-buttons {
+    position: absolute;
+    top: 10%;
+    left: 1%;
+    width: 150px;
+    padding: 10px;
+}
+
+.round-btn {
+    margin-top: 10px;
+    text-align: center;
+    height: 70px;
+    width: 70px;
+    font-size: 43px;
+    border-radius: 100%;
+    background-color: rgba(60, 118, 61, 0.8);;
+    color: white;
+    transition: all 0.5s;
+    border: none;
+}
+
+.round-btn:hover {
+    color: white;
+    background-color: #9100c8;
+    border: none;
+}
+
+.round-btn:focus,
+.round-btn:active:focus,
+.round-btn.active:focus,
+.round-btn.focus,
+.round-btn:active.focus,
+.round-btn.active.focus,
+.round-btn:focus,
+.round-btn:active:focus,
+.round-btn.active:focus,
+.round-btn.focus,
+.round-btn:active.focus,
+.round-btn.active.focus {
+    outline: none;
+    background-color: rgba(145, 0, 200, 0.8);;
+    border: none;
+    color: white;
+}
+
+.round-btn i {
+    padding-right: 0;
+}
+
+.left-aside .header {
+    border-radius: 9px 0 0 0;
+    position: relative;
+    background-color: #4b964b;
+}
+
+.btn-red:focus,
+.btn-red:active:focus,
+.btn-red.active:focus,
+.btn-red.focus,
+.btn-red:active.focus,
+.btn-red.active.focus,
+.btn-blue:focus,
+.btn-blue:active:focus,
+.btn-blue.active:focus,
+.btn-blue.focus,
+.btn-blue:active.focus,
+.btn-blue.active.focus {
+    outline: none;
+}
+
+.btn-red:hover,
+.btn-red:focus,
+.btn-red.focus,
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue.focus {
+    color: white;
+    text-decoration: none;
+}
+
+.delete-list {
+    position: absolute;
+    top: 13px;
+    right: 0;
+}
+
+.delete-task {
+    position: absolute;
+    top: 13px;
+    right: 0;
+    color: rgba(15, 15, 15, 0.57);
+}
+
+li .thumb {
+    font-size: 25px;
+    position: absolute;
+    top: 9px;
+    left: 25px;
+    cursor: pointer;
+    transition: all 0.5s;
+    -webkit-transform: rotate(45deg);
+    top: 15px;
+}
+
+li .thumb:hover {
+    -webkit-transform: rotate(0deg);
+    top: 10px;
+}
+
+.tasks li .active-thumb {
+    -webkit-transform: rotate(0deg);
+    top: 10px;
+    color: rgba(15, 15, 15, 0.57);
+}
+
+.tasks li .active-thumb:hover {
+    -webkit-transform: rotate(45deg);
+    top: 10px;
+}
+
+.active {
+    background-color: rgba(145, 0, 200, 0.8);;
+    border: none;
+}
+
+ul.tasks li a.active-task {
+    background-color: rgba(145, 0, 200, 0.8);;
+}
+
+.tasks li a.complete-task {
+    background-color: rgba(7, 93, 8, 0.9);
+    text-decoration: line-through;
+    color: rgba(15, 15, 15, 0.57);
+}
+
+i {
+    cursor: pointer;
+}
+
+.info-ui {
+    display: inline;
+}
+
+.input-container-aside {
+    text-align: center;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.input-container textarea {
+    width: 80%;
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F3FCFC;
+    resize: none;
+}
+
+.input-container h4 {
+    text-align: left;
+    padding-left: 10%;
+}
+
+.input-type {
+    display: inline-block;
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F3FCFC;
+}
+
+div .calendar-icon {
+    position: absolute;
+    top: 60%;
+    left: 14%;
+}
+
+.drop-box {
+    display: inline-block;
+    background-color: #F3FCFC;
+    border: 2px dashed #aaa;
+    width: 80%;
+    height: 100px;
+    text-align: center;
+    margin: 10px 0;
+    cursor: pointer;
+    border-radius: 10px;
+    font-weight: bolder;
+    padding: 25px 5px 0 5px;
+    color: #9B9B9B;
+}
+
+.close-aside {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    color: white
+}
+
+.subtasks li {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    width: 80%;
+    margin: 5px 10px 0 10px;
+    list-style: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 5px 10px 10px 40px;
+    height: 30px;
+    text-decoration: none;
+    background-color: rgba(119, 119, 119, 0.98);;
+    transition: all 0.3s;
+}
+
+.subtasks li i {
+    position: absolute;
+    left: 13px;
+    top: 9px;
+    font-size: 16px;
+}
+
+div.subtask-input {
+    text-align: left;
+}
+
+input.calendar {
+    text-align: center;
+    color: #9B9B9B;;;
+}
+
+.subtasks li i.delete {
+    position: absolute;
+    top: 10px;
+    left: 90%;
+    font-size: 12px;
+}
+
+.img-container {
+    position: relative;
+    padding: 5px !important;
+    background-color: white !important;
+}
+
+.img-container img {
+    cursor: pointer;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.img-container li {
+    padding: 5px;
+    background-color: white;
+}
+
+.img-container i {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.img-container i:hover {
+    color: rgb(0,0,0);
+}

@@ -1,0 +1,14 @@
+<div class="modal">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-body center">
+                <h3>New List</h3>
+                <input type="text" class="form-control" ng-enter="addList();" ng-model="newList.name" placeholder="Name">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-red" ng-click="$hide();">Cancel</button>
+                <button class="btn btn-blue" ng-click="addList();">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="container-fluid">
+
+    <div class="row">
+        <div ng-scrollbars class="col-lg-2 aside">
+            <div class="row">
+                <div class="header"><i class="fa fa fa-dot-circle-o"></i>Welcome {{user.name}}!</div>
+                <div class="footer-block">
+                    <button class="btn btn-red" ng-click="logout()"><i class="fa fa-times-circle"></i>Logout</button>
+                    <button class="btn btn-red" ng-click="showSettingsModal()"><i class="fa fa-cog"></i>Settings
+                    </button>
+                </div>
+                <div class="add">
+                    <button class="btn btn-success add-btn" ng-click="showNewListModal()"><i class="fa fa-plus"></i>New
+                        List
+                    </button>
+                </div>
+                <ul class="lists">
+                    <li class="am-flip-x" ng-repeat="list in lists | orderBy: 'name'" ng-animate="animate">
+
+                        <a ng-class="{true: 'active-list', false: ''}[list._id === current]"
+                           ng-click="updateSelected(list._id)" ng-href="#/lists/{{list._id}}">{{list.name}}
+                        </a>
+                        <i class="delete-list fa fa-times" ng-click="deleteList(list._id)"></i>
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+        <div class="col-lg-10 main">
+            <div ui-view></div>
+        </div>
+
+    </div>
+
+
+</div>

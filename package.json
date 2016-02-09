@@ -1,0 +1,31 @@
+{
+  "name": "Wunderlist",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vladimir Halushko",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.4.6",
+    "angular-ui-router": "0.2.15",
+    "express": "4.13.3",
+    "mongoose": "4.3.4",
+    "body-parser": "1.14.2",
+    "angular-animate": "1.4.8",
+    "angular-strap": "2.3.6",
+    "passport": "0.3.2",
+    "passport-local": "1.0.0",
+    "cookie-parser": "1.4.0",
+    "express-session": "1.12.1",
+    "connect-mongo": "1.1.0",
+    "ng-file-upload": "11.0.2",
+    "gridfs-stream": "1.1.1"
+  },
+  "devDependencies": {
+    "webpack": "^1.12.9",
+    "webpack-dev-server": "latest"
+  }
+}

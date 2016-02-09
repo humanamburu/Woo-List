@@ -1,0 +1,44 @@
+<div class="left-aside">
+    <div class="header">
+        <i class="fa fa-times close-aside"
+           ng-click="close()"></i>{{task.name}}
+    </div>
+    <div class="input-container input-container-aside">
+        <h4>Due date:</h4>
+        <input type="date" class="input-type calendar" ng-model="task.date"
+               ng-change="updateDate()">
+        <i class="fa fa-calendar calendar-icon"></i>
+    </div>
+    <div class="input-container input-container-aside">
+        <h4>Subtasks:</h4>
+        <input type="text" class="input-type" ng-model="newSubtask.name"
+               ng-enter="addSubtask()">
+        <i class="fa fa-plus calendar-icon"></i>
+    </div>
+    <ul class="subtasks">
+        <li class="am-flip-x" ng-repeat="subtask in task.subtasks"><i ng-click="toggle(subtask)" class="fa fa-square-o"
+                                                                      ng-if="!subtask.done"></i><i
+                ng-click="toggle(subtask)"
+                class="fa fa-check-square-o"
+                ng-if="subtask.done"></i>{{subtask.name}}<i
+                class="fa fa-times delete"
+                ng-click="deleteSubtask(subtask._id)"></i></li>
+    </ul>
+    <div class="input-container input-container-aside">
+        <h4>Description:</h4>
+        <textarea ng-model="task.description" cols="30" rows="5"></textarea>
+        <button class="btn btn-red" ng-click="saveDescription(task._id)">Save</button>
+    </div>
+    <div class="input-container input-container-aside">
+        <div ngf-drop ngf-select ng-model="files" class="drop-box"
+             ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
+             accept="image/*,application/pdf"
+             ngf-pattern="'image/*,application/pdf'">Drop images here or click to upload</div>
+        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
+        <ul>
+            <li ng-repeat="f in files" style="font:smaller"><img ng-src="{{f.src}}" data-toggle="modal" data-target="#picture" ng-click="selectIMG(file.src);"></li>
+        </ul>
+
+    </div>
+
+</div>
