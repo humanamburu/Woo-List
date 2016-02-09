@@ -41927,24 +41927,6 @@ var main =
 	        tasks.updateTask(false, id, $scope.task.description);
 	    };
 	
-	
-	    $scope.$watch('files', function () {
-	        $scope.upload($scope.files);
-	    });
-	
-	    $scope.$watch('file', function () {
-	        if ($scope.file != null) {
-	            $scope.files = [$scope.file];
-	        }
-	    });
-	
-	    $scope.upload = function (file) {
-	        Upload.upload({
-	            url: '/file',
-	            data: {file: file, 'task': $scope.task._id}
-	        });
-	    };
-	
 	}]);
 	
 	module.exports = Info;
@@ -41975,11 +41957,7 @@ var main =
 	
 	        tasks.updateTask(true, task._id)
 	            .success(function () {
-	                if (!task.done) {
-	                    task.done = true;
-	                } else {
-	                    task.done = false;
-	                }
+	                task.done = !task.done;
 	            });
 	
 	    };

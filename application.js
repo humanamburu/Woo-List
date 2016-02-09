@@ -57,6 +57,4 @@ app.put('/task/subtask', controllers.toggleSubtask);
 app.post('/task/subtask', controllers.addSubtask);
 app.delete('/task/subtask', controllers.deleteSubtask);
 
-app.post('/file', controllers.file.create);
-
 module.exports = app;

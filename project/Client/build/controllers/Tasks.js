@@ -20,11 +20,7 @@ var Tasks = angular.module('WunderlistControllers').controller('Tasks', ['$scope
 
         tasks.updateTask(true, task._id)
             .success(function () {
-                if (!task.done) {
-                    task.done = true;
-                } else {
-                    task.done = false;
-                }
+                task.done = !task.done;
             });
 
     };

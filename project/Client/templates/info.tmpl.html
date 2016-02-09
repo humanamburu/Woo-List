@@ -29,16 +29,5 @@
         <textarea ng-model="task.description" cols="30" rows="5"></textarea>
         <button class="btn btn-red" ng-click="saveDescription(task._id)">Save</button>
     </div>
-    <div class="input-container input-container-aside">
-        <div ngf-drop ngf-select ng-model="files" class="drop-box"
-             ngf-drag-over-class="'dragover'" ngf-multiple="true" ngf-allow-dir="true"
-             accept="image/*,application/pdf"
-             ngf-pattern="'image/*,application/pdf'">Drop images here or click to upload</div>
-        <div ngf-no-file-drop>File Drag/Drop is not supported for this browser</div>
-        <ul>
-            <li ng-repeat="f in files" style="font:smaller"><img ng-src="{{f.src}}" data-toggle="modal" data-target="#picture" ng-click="selectIMG(file.src);"></li>
-        </ul>
-
-    </div>
 
 </div>

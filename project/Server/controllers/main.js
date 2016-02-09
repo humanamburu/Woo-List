@@ -23,6 +23,4 @@ controllers.addSubtask = require('./tasks/subtasks/AddSubtask');
 controllers.toggleSubtask = require('./tasks/subtasks/ToggleSubtask');
 controllers.deleteSubtask = require('./tasks/subtasks/DeleteSubtask');
 
-controllers.file = require('./file/File');
-
 module.exports = controllers;
