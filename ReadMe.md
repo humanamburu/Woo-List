@@ -39,5 +39,5 @@ http://localhost:8080
 - For frontend devs:
 
 ```sh
-$ webpack plus $ webpack-dev-server
+$ webpack
 ```

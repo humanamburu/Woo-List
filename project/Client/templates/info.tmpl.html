@@ -4,14 +4,14 @@
            ng-click="close()"></i>{{task.name}}
     </div>
     <div class="input-container input-container-aside">
-        <h4>Due date:</h4>
+        <h4>Дата выполнения:</h4>
         <input type="date" class="input-type calendar" ng-model="task.date"
-               ng-change="updateDate()">
+               ng-change="updateDate()" placeholder="Дата">
         <i class="fa fa-calendar calendar-icon"></i>
     </div>
     <div class="input-container input-container-aside">
-        <h4>Subtasks:</h4>
-        <input type="text" class="input-type" ng-model="newSubtask.name"
+        <h4>Дополнительные задания:</h4>
+        <input placeholder="Название" type="text" class="input-type" ng-model="newSubtask.name"
                ng-enter="addSubtask()">
         <i class="fa fa-plus calendar-icon"></i>
     </div>
@@ -25,9 +25,9 @@
                 ng-click="deleteSubtask(subtask._id)"></i></li>
     </ul>
     <div class="input-container input-container-aside">
-        <h4>Description:</h4>
-        <textarea ng-model="task.description" cols="30" rows="5"></textarea>
-        <button class="btn btn-red" ng-click="saveDescription(task._id)">Save</button>
+        <h4>Описание:</h4>
+        <textarea placeholder="Подробнее" ng-model="task.description" cols="30" rows="5"></textarea>
+        <button class="btn btn-red" ng-click="saveDescription(task._id)">Сохранить</button>
     </div>
 
 </div>

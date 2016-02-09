@@ -6,7 +6,7 @@ var User = mongoose.Schema({
         required: true,
         validate: {
             validator: function(v) {
-                return /^[a-zA-Z\s]+$/.test(v);
+                return /^[a-zA-Zа-яА-Я\s]+$/.test(v);
             },
             message: '{VALUE} is not a valid name!'
         }

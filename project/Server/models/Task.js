@@ -16,7 +16,8 @@ var Task = mongoose.Schema({
         ref: 'User'
     },
     date: {
-        type: Date
+        type: Date,
+        default: new Date()
     },
     description: {
         type: String,

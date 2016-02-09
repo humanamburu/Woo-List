@@ -3,16 +3,13 @@
     <div class="row">
         <div ng-scrollbars class="col-lg-2 aside">
             <div class="row">
-                <div class="header"><i class="fa fa fa-dot-circle-o"></i>Welcome {{user.name}}!</div>
+                <div class="header"><i class="fa fa fa-dot-circle-o"></i>Привет, {{user.name}}!</div>
                 <div class="footer-block">
-                    <button class="btn btn-red" ng-click="logout()"><i class="fa fa-times-circle"></i>Logout</button>
-                    <button class="btn btn-red" ng-click="showSettingsModal()"><i class="fa fa-cog"></i>Settings
-                    </button>
+                    <button class="btn btn-red" ng-click="logout()"><i class="fa fa-times-circle"></i>Выход</button>
+                    <button class="btn btn-red" ng-click="showSettingsModal()"><i class="fa fa-cog"></i>Настройки</button>
                 </div>
                 <div class="add">
-                    <button class="btn btn-success add-btn" ng-click="showNewListModal()"><i class="fa fa-plus"></i>New
-                        List
-                    </button>
+                    <button class="btn btn-success add-btn" ng-click="showNewListModal()"><i class="fa fa-plus"></i>Добавить список</button>
                 </div>
                 <ul class="lists">
                     <li class="am-flip-x" ng-repeat="list in lists | orderBy: 'name'" ng-animate="animate">

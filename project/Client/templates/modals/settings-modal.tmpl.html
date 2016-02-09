@@ -2,30 +2,30 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header center">
-                <h2>Account Settings</h2>
+                <h2>Настройки</h2>
             </div>
             <div class="modal-body">
                 <div class="input-container">
-                    <input ng-model="user.name" type="text" id="name" class="form-control" placeholder="Name"
+                    <input ng-model="user.name" type="text" id="name" class="form-control" placeholder="Имя"
                            data-toggle="tooltip" data-placement="bottom" title="name">
                     <label for="name"><i class="fa fa-user"></i></label>
                 </div>
                 <div class="input-container">
                     <input ng-model="user.password" type="password" id="auth-password" class="form-control"
-                           placeholder="Password" data-toggle="tooltip" data-placement="bottom" title="password">
+                           placeholder="Изменить пароль" data-toggle="tooltip" data-placement="bottom" title="password">
                     <label for="auth-password"><i class="fa fa-lock"></i></label>
                 </div>
                 <div class="input-container">
                     <input ng-model="user.subPassword" type="password" id="confirm_auth-password" class="form-control"
-                           placeholder="Confirm Password" data-toggle="tooltip" data-placement="bottom"
+                           placeholder="Подтверждение пароля" data-toggle="tooltip" data-placement="bottom"
                            title="confirm password">
                     <label for="confirm_auth-password"><i class="fa fa-unlock"></i></label>
                 </div>
             </div>
             <bs-alert></bs-alert>
             <div class="modal-footer">
-                <button ng-click="$hide()" class="btn btn-red">Cancel</button>
-                <button ng-click="saveSettings()" class="btn btn-blue">Save</button>
+                <button ng-click="$hide()" class="btn btn-red">Отмена</button>
+                <button ng-click="saveSettings()" class="btn btn-blue">Сохранить</button>
             </div>
         </div>
     </div>

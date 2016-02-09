@@ -6,10 +6,10 @@
 </div>
 
 <ul class="tasks">
-    <li class="task-input-li"><i class="fa fa-plus" ng-click="addTask()"></i><input ng-enter="addTask()"
-                                                                                    placeholder="New task"
-                                                                                    ng-model="newTask.name"
-                                                                                    class="task-input" type="text">
+    <li class="task-input-li"><input ng-enter="addTask()"
+                                     placeholder="Добавить новое задание (Enter)"
+                                     ng-model="newTask.name"
+                                     class="task-input" type="text">
     </li>
     <li class="am-fade" ng-repeat="task in tasks | filter:{done:false}"><i ng-click="updateTask(task)"
                                                                            class="fa fa-thumb-tack thumb"></i><a
@@ -18,7 +18,7 @@
             ng-click="updateSelected(task._id)">{{task.name}}</a><i class="delete-list fa fa-times delete-task"
                                                                     ng-click="deleteTask(task._id)"></i>
     </li>
-    <li  ng-class="{true: 'am-fade', false: ''}[visibility]" ng-hide="!visibility"
+    <li ng-class="{true: 'am-fade', false: ''}[visibility]" ng-hide="!visibility"
         ng-repeat="task in tasks | filter:{done:true}"><i
             ng-click="updateTask(task)"
             class="fa fa-thumb-tack thumb active-thumb"></i><a

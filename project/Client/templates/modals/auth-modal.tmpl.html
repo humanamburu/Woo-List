@@ -2,22 +2,22 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header center">
-                <h2>Your data</h2>
+                <h2>Данные для входа</h2>
             </div>
             <div class="modal-body">
                 <div class="input-container">
-                    <input ng-model="authUser.username" type="email" id="in-email" ng-enter="auth()" class="form-control" placeholder="Email" data-toggle="tooltip" data-placement="bottom" title="email">
+                    <input ng-model="authUser.username" type="email" id="in-email" ng-enter="auth()" class="form-control" placeholder="E-mail" data-toggle="tooltip" data-placement="bottom" title="email">
                     <label for="in-email"><i class="fa fa-envelope"></i></label>
                 </div>
                 <div class="input-container">
-                    <input ng-model="authUser.password" type="password" ng-enter="auth()" id="in-password" class="form-control" placeholder="Password" data-toggle="tooltip" data-placement="bottom" title="password">
+                    <input ng-model="authUser.password" type="password" ng-enter="auth()" id="in-password" class="form-control" placeholder="Пароль" data-toggle="tooltip" data-placement="bottom" title="password">
                     <label for="in-password"><i class="fa fa-lock"></i></label>
                 </div>
             </div>
             <bs-alert></bs-alert>
             <div class="modal-footer">
-                <button ng-click="$hide();" class="btn btn-red" >Cancel</button>
-                <button class="btn btn-blue" ng-click="auth()">Go!</button>
+                <button ng-click="$hide();" class="btn btn-red" >Отмена</button>
+                <button class="btn btn-blue" ng-click="auth()">Вперед!</button>
             </div>
         </div>
     </div>

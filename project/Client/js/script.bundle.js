@@ -41652,8 +41652,8 @@ var main =
 	        var error, success;
 	        if ($scope.newUser.name === "" || $scope.newUser.email === "" || $scope.newUser.password === "" || $scope.newUser.subPassword === "") {
 	            error = $alert({
-	                title: 'Error! ',
-	                content: 'Fill all Inputs!',
+	                title: 'Ошибка! ',
+	                content: 'Заполните все поля!',
 	                placement: 'top',
 	                type: 'danger',
 	                show: true,
@@ -41663,8 +41663,8 @@ var main =
 	            });
 	        } else if ($scope.newUser.password != $scope.newUser.subPassword) {
 	            error = $alert({
-	                title: 'Error! ',
-	                content: 'Password and submit password not identical!',
+	                title: 'Ошибка! ',
+	                content: 'Пароли не совпадают!',
 	                placement: 'top',
 	                type: 'danger',
 	                show: true,
@@ -41678,8 +41678,8 @@ var main =
 	                    RegModal.$promise.then(RegModal.hide);
 	                    $scope.clearNewUser();
 	                    success = $alert({
-	                        title: 'Success!',
-	                        content: 'Excellent! Now, Sign-in :)',
+	                        title: 'Успех!',
+	                        content: 'Превосходно! Теперь можно выполнить вход :)',
 	                        animation: 'am-flip-x',
 	                        type: 'success success-center',
 	                        show: true,
@@ -41689,8 +41689,8 @@ var main =
 	                })
 	                .error(function () {
 	                    error = $alert({
-	                        title: 'Error! ',
-	                        content: 'Incorrect email, password or name. Try again.',
+	                        title: 'Ошибка! ',
+	                        content: 'Некорректные данные. Попробуйте еще раз',
 	                        placement: 'top',
 	                        type: 'danger',
 	                        show: true,
@@ -41713,8 +41713,8 @@ var main =
 	            })
 	            .error(function () {
 	                error = $alert({
-	                    title: 'Error! ',
-	                    content: 'Incorrect email or password. Try again.',
+	                    title: 'Ошибка! ',
+	                    content: 'Некорректные данные',
 	                    placement: 'top',
 	                    type: 'danger',
 	                    show: true,
