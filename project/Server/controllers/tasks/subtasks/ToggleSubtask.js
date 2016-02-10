@@ -1,4 +1,5 @@
 var Subtask = require('../../../models/Subtask');
+var logger = require('../../../logger');
 
 var toggle = function (req, res) {
     Subtask.findOne({_id: req.query.id}, function (error, subtask) {

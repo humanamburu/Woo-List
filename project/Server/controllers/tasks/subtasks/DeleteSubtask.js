@@ -1,4 +1,5 @@
 var Subtask = require('../../../models/Subtask');
+var logger = require('../../../logger');
 
 var del = function (req, res) {
     Subtask.remove({_id: req.query.id}, function (error) {
