@@ -661,3 +661,25 @@ input.calendar {
     display: none;
 
 }
+
+.advice {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    width: 320px;
+    right: 10px;
+    top: 100px;
+    z-index: 0;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.57);
+    border-radius: 5px;
+
+}
+
+.advice.second {
+    top: 280px;
+}
+
+.advice.third {
+    top: 430px;
+}
