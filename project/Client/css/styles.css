@@ -59,7 +59,7 @@ body {
 }
 
 .input-container input {
-    padding: 6px 6px 6px 35px;
+    padding: 6px 6px 6px 50px;
     z-index: 0;
 }
 
@@ -682,4 +682,18 @@ input.calendar {
 
 .advice.third {
     top: 430px;
+}
+
+.welcome {
+    position: absolute;
+    left: -153px;
+    bottom: 10px;
+}
+
+.main-advice {
+    top: 30%;
+    left: 25%;
+    width: 50%;
+    text-align: center;
+    padding: 30px;
 }
