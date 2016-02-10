@@ -1,8 +1,10 @@
 var User = require('../../models/User'),
     Task = require('../../models/Task');
+var logger = require('../../logger');
 
 var addTask = function (req, res) {
     User.findById(req.body.userId, function (error, user) {
+        logger('req :POST: /task');
         if (error) {
             res.sendStatus(401);
             return;

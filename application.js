@@ -6,17 +6,22 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     session = require('express-session'),
     MongoStore = require('connect-mongo')(session),
-    controllers = require('./project/Server/controllers/main.js');
+    controllers = require('./project/Server/controllers/main.js'),
+    logger = require('./project/Server/logger');
 
+logger('');
+logger('Running server...');
 var server = app.listen(8080);
 mongoose.connect(config.mongo, function (error) {
     if (error) throw error;
 });
 
+logger('Server run at localhost:8080');
 app.use(cookieParser());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
+logger('Parsers initial complete');
 app.use(session({
     resave: false,
     secret: 'wunderlist',
@@ -29,9 +34,13 @@ app.use(session({
         })
 }));
 
+logger('Passport initialize');
 app.use(controllers.passport.initialize());
 app.use(controllers.passport.session());
 
+logger('');
+logger('Wait for requests...');
+logger('');
 
 app.use('/', express.static('./project/Client/'));
 

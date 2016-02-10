@@ -2,15 +2,12 @@ var Subtask = require('../../../models/Subtask');
 
 var toggle = function (req, res) {
     Subtask.findOne({_id: req.query.id}, function (error, subtask) {
+        logger('req :PUT: /task/subtask');
         if (error) {
             res.sendStatus(400);
         }
         else {
-            if (!subtask.done) {
-                subtask.done = true;
-            } else {
-                subtask.done = false;
-            }
+            subtask.done = !subtask.done;
             subtask.save();
             res.sendStatus(200);
         }

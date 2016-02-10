@@ -1,6 +1,7 @@
 var User = require('../../models/User');
 
 function Registration(req, res) {
+    logger('req :POST: /registration');
     var user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -8,7 +9,13 @@ function Registration(req, res) {
     });
 
     user.save(function (error) {
-        error ? res.sendStatus(400) : res.sendStatus(200);
+        if (error) {
+            logger('res :STATUS ? 400: /registration');
+            res.sendStatus(400);
+        } else {
+            logger('res :STATUS ? 200: /registration');
+            res.sendStatus(200);
+        }
     });
 }
 

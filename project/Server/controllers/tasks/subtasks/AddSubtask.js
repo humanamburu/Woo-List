@@ -1,8 +1,10 @@
 var Task = require('../../../models/Task'),
     Subtask = require('../../../models/Subtask');
+var logger = require('../../../logger');
 
 var addTask = function (req, res) {
     Task.findById(req.body.taskId, function (error, task) {
+        logger('req :POST: /task/subtask');
         if (error) {
             res.sendStatus(401);
             return;

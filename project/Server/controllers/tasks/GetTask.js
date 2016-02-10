@@ -1,8 +1,10 @@
 var Task = require('../../models/Task'),
     Subtask = require('../../models/Subtask');
+var logger = require('../../logger');
 
 var getTask = function (req, res) {
     Task.find({_id: req.query.id}, function (error, task) {
+        logger('req :GET: /task');
         if (error) {
             res.sendStatus(400);
         } else {

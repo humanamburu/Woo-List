@@ -1,7 +1,9 @@
 var Task = require('../../models/Task');
+var logger = require('../../logger');
 
 var updateTask = function (req, res) {
     Task.findOne({_id: req.query.id}, function (error, task) {
+        logger('req :UPDATE: /task');
         if (error) {
             res.sendStatus(400);
         }
