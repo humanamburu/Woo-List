@@ -649,6 +649,15 @@ input.calendar {
     transform: rotate(-11deg);
 }
 
+.click-here-image-lists {
+    position: absolute;
+    top: 195px;
+    transform: rotate(-17deg);
+    z-index: 999;
+}
+
+
 .hide-hard {
     display: none;
+
 }
