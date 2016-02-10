@@ -4,7 +4,7 @@
     <button class="btn round-btn" ng-class="{true: '', false: 'active'}[visibility]" ng-click="visibility=false;"><i
             class="fa fa-eye-slash"></i></button>
 </div>
-
+<img src="../css/pictures/click-here.png" alt="click" ng-class="{true: 'hide-hard', false: ''}[tasks.length != 0]" class="click-here-image">
 <ul class="tasks">
     <li class="task-input-li"><input ng-enter="addTask()"
                                      placeholder="Добавить новое задание (Enter)"

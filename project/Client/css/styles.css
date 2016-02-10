@@ -148,11 +148,11 @@ bs-alert div {
 
 .header {
     text-align: center;
-    font-size: 16px;
     color: white;
     padding: 10px;
     width: 100%;
     background-color: #C0392B;
+    font-size: 19px;
 }
 
 .footer-block {
@@ -328,13 +328,13 @@ body ul .task-input-li:hover {
 }
 
 .task-input {
-    border: 2px solid rgb(91, 74, 98);
-    background-color: rgba(119, 9, 167, 0.75);
+    border: none;
+    background-color: rgb(52, 126, 191);
     color: white;
     width: 101%;
     padding: 10px;
     border-radius: 2px;
-    outline-color: white;
+    outline: none;
 }
 
 .task-input::-webkit-input-placeholder {
@@ -422,6 +422,7 @@ body ul .task-input-li:hover {
     border-radius: 9px 0 0 0;
     position: relative;
     background-color: #4b964b;
+    margin-bottom: 15px;
 }
 
 .btn-red:focus,
@@ -499,9 +500,11 @@ ul.tasks li a.active-task {
 }
 
 .tasks li a.complete-task {
-    background-color: rgba(7, 93, 8, 0.9);
+    background-color: rgba(170, 135, 38, 0.74);
     text-decoration: line-through;
-    color: rgba(15, 15, 15, 0.57);
+    color: rgba(15, 15, 15, 0.68);
+    font-weight: 600;
+    transition: all 0.5s;
 }
 
 i {
@@ -565,7 +568,7 @@ div .calendar-icon {
 
 .close-aside {
     position: absolute;
-    top: 30%;
+    top: 25%;
     right: 1%;
     color: white
 }
@@ -639,4 +642,13 @@ input.calendar {
     color: rgb(0,0,0);
 }
 
+.click-here-image {
+    position: absolute;
+    top: 100px;
+    left: 135px;
+    transform: rotate(-11deg);
+}
 
+.hide-hard {
+    display: none;
+}
