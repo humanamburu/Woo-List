@@ -33472,6 +33472,9 @@ var main =
 	        updateDate: function (id, date) {
 	            return $http.put('/task/date?id=' + id + '&date=' + date);
 	        },
+	        updateImage: function (id, image) {
+	            return $http.put('/task/image?id=' + id + '&img=' + image);
+	        },
 	        addSubtask: function (data) {
 	            return $http.post('/task/subtask', data);
 	        },
@@ -41856,7 +41859,7 @@ var main =
 /* 16 */
 /***/ function(module, exports) {
 
-	var Info = angular.module('WunderlistControllers').controller('Info', ['$scope', 'personals', 'lists', '$state', '$stateParams', 'tasks', '$location', function ($scope, personals, lists, $state, $stateParams, tasks, $location) {
+	var Info = angular.module('WunderlistControllers').controller('Info', ['$scope', 'personals', 'lists', '$state', '$stateParams', 'tasks', '$location', '$alert', function ($scope, personals, lists, $state, $stateParams, tasks, $location, $alert) {
 	    $scope.task = {};
 	
 	    $scope.newSubtask = {
@@ -41872,11 +41875,17 @@ var main =
 	            $scope.task = res.task;
 	            $scope.task.subtasks = res.subtasks;
 	            $scope.task.date = new Date($scope.task.date);
+	            console.log($scope.task);
+	
 	
 	        });
 	
 	    $scope.updateDate = function () {
 	        tasks.updateDate($scope.task._id, $scope.task.date);
+	    };
+	
+	    $scope.updateImage = function () {
+	        tasks.updateImage($scope.task._id, $scope.task.img);
 	    };
 	
 	    $scope.addSubtask = function () {
@@ -41915,7 +41924,19 @@ var main =
 	    };
 	
 	    $scope.saveDescription = function (id) {
-	        tasks.updateTask(false, id, $scope.task.description);
+	        tasks.updateTask(false, id, $scope.task.description)
+	            .success (function() {
+	                console.log('success');
+	
+	                success = $alert({
+	                    title: 'Успех!',
+	                    content: 'Данные сохранены',
+	                    animation: 'am-flip-x',
+	                    type: 'success success-center',
+	                    show: true,
+	                    duration: 3
+	                });
+	            });
 	    };
 	
 	}]);

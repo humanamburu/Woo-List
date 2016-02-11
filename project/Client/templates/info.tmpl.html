@@ -26,8 +26,12 @@
     </ul>
     <div class="input-container input-container-aside">
         <h4>Описание:</h4>
-        <textarea placeholder="Подробнее" ng-model="task.description" cols="30" rows="5"></textarea>
-        <button class="btn btn-red" ng-click="saveDescription(task._id)">Сохранить</button>
+        <textarea placeholder="Подробнее (Enter -> Сохранить)" ng-model="task.description" cols="30" rows="5" ng-enter="saveDescription(task._id)"></textarea>
+        <div class="input-container input-container-aside photo-container">
+            <h4>Привязать фото:</h4>
+            <input type="text" class="input-type calendar photo"
+                   ng-change="updateImage()" placeholder="URL фото" ng-model="task.img">
+        </div>
+        <img class="info-image" src="{{task.img}}" alt="image">
     </div>
-
 </div>

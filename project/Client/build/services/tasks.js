@@ -28,6 +28,9 @@ var tasks = angular.module('WunderlistServices').factory('tasks', ['$http', 'per
         updateDate: function (id, date) {
             return $http.put('/task/date?id=' + id + '&date=' + date);
         },
+        updateImage: function (id, image) {
+            return $http.put('/task/image?id=' + id + '&img=' + image);
+        },
         addSubtask: function (data) {
             return $http.post('/task/subtask', data);
         },

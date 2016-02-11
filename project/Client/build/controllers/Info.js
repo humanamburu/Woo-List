@@ -1,4 +1,4 @@
-var Info = angular.module('WunderlistControllers').controller('Info', ['$scope', 'personals', 'lists', '$state', '$stateParams', 'tasks', '$location', function ($scope, personals, lists, $state, $stateParams, tasks, $location) {
+var Info = angular.module('WunderlistControllers').controller('Info', ['$scope', 'personals', 'lists', '$state', '$stateParams', 'tasks', '$location', '$alert', function ($scope, personals, lists, $state, $stateParams, tasks, $location, $alert) {
     $scope.task = {};
 
     $scope.newSubtask = {
@@ -14,11 +14,17 @@ var Info = angular.module('WunderlistControllers').controller('Info', ['$scope',
             $scope.task = res.task;
             $scope.task.subtasks = res.subtasks;
             $scope.task.date = new Date($scope.task.date);
+            console.log($scope.task);
+
 
         });
 
     $scope.updateDate = function () {
         tasks.updateDate($scope.task._id, $scope.task.date);
+    };
+
+    $scope.updateImage = function () {
+        tasks.updateImage($scope.task._id, $scope.task.img);
     };
 
     $scope.addSubtask = function () {
@@ -57,7 +63,19 @@ var Info = angular.module('WunderlistControllers').controller('Info', ['$scope',
     };
 
     $scope.saveDescription = function (id) {
-        tasks.updateTask(false, id, $scope.task.description);
+        tasks.updateTask(false, id, $scope.task.description)
+            .success (function() {
+                console.log('success');
+
+                success = $alert({
+                    title: 'Успех!',
+                    content: 'Данные сохранены',
+                    animation: 'am-flip-x',
+                    type: 'success success-center',
+                    show: true,
+                    duration: 3
+                });
+            });
     };
 
 }]);

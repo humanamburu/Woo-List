@@ -23,6 +23,10 @@ var Task = mongoose.Schema({
         type: String,
         default: ""
     },
+    img: {
+        type: String,
+        default: "http://z-teh.ru/wp-content/themes/z-teh_shop/assets//img/placeholder.png"
+    },
     done : {
         type: Boolean,
         required: true,

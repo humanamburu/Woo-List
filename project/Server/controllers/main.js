@@ -18,6 +18,7 @@ controllers.getTask = require('./tasks/GetTask');
 controllers.delTask = require('./tasks/Del');
 controllers.updateTask = require('./tasks/Update');
 controllers.updateDate = require('./tasks/UpdateDate');
+controllers.updateImage = require('./tasks/UpdateImage');
 
 controllers.addSubtask = require('./tasks/subtasks/AddSubtask');
 controllers.toggleSubtask = require('./tasks/subtasks/ToggleSubtask');

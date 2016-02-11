@@ -61,6 +61,7 @@ app.get('/task', controllers.getTask);
 app.delete('/task', controllers.delTask);
 app.put('/task', controllers.updateTask);
 app.put('/task/date', controllers.updateDate);
+app.put('/task/image', controllers.updateImage);
 
 app.put('/task/subtask', controllers.toggleSubtask);
 app.post('/task/subtask', controllers.addSubtask);

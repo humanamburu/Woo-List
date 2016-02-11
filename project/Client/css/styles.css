@@ -365,8 +365,9 @@ body ul .task-input-li:hover {
     display: inline-block;
     width: 25%;
     background-color: #ECF0F1;
-    height: 90vh;
+    height: 95vh;
     float: right;
+    position: relative;
 }
 
 .control-buttons {
@@ -696,4 +697,54 @@ input.calendar {
     width: 50%;
     text-align: center;
     padding: 30px;
+}
+
+
+.info-image {
+    margin-top: 10px;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.save-info-changes {
+    position: absolute;
+    right: 21%;
+    top: 300px;
+    transform: rotate(-90deg);
+    border-radius: 5px 5px 0 0;
+    border-bottom: 10px solid #ECF0F1;
+}
+
+.save-info-changes:hover {
+    border-bottom-color: #ECF0F1;
+}
+
+
+.input-container-aside.photo-container {
+    text-align: left;
+}
+
+input.photo {
+    width: 55px;
+    margin-left: 9%;
+    transition: all 0.5s;
+    padding: 6px;
+}
+
+i.photo-icon {
+    position: absolute;
+    top: 60%;
+    left: 14%;
+}
+
+.photo:hover,
+.photo:active,
+.photo:focus {
+    width: 80%;
+}
+
+.info-success-center {
+    position: absolute;
+    top: 5%;
+    right: 10%;
 }
