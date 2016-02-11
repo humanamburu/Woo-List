@@ -20,8 +20,6 @@ var tasks = angular.module('WunderlistServices').factory('tasks', ['$http', 'per
         },
 
         updateTask: function (toggle,id, desc) {
-            console.log('/task?id=' + id + '&desc=' + desc + '&toggle=' + toggle);
-
             return $http.put('/task?id=' + id + '&desc=' + desc + '&toggle=' + toggle);
         },
 

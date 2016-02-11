@@ -14,7 +14,6 @@ var Info = angular.module('WunderlistControllers').controller('Info', ['$scope',
             $scope.task = res.task;
             $scope.task.subtasks = res.subtasks;
             $scope.task.date = new Date($scope.task.date);
-            console.log($scope.task);
 
 
         });

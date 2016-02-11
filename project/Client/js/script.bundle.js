@@ -33464,8 +33464,6 @@ var main =
 	        },
 	
 	        updateTask: function (toggle,id, desc) {
-	            console.log('/task?id=' + id + '&desc=' + desc + '&toggle=' + toggle);
-	
 	            return $http.put('/task?id=' + id + '&desc=' + desc + '&toggle=' + toggle);
 	        },
 	
@@ -41875,7 +41873,6 @@ var main =
 	            $scope.task = res.task;
 	            $scope.task.subtasks = res.subtasks;
 	            $scope.task.date = new Date($scope.task.date);
-	            console.log($scope.task);
 	
 	
 	        });
