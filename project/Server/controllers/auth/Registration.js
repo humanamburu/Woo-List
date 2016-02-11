@@ -1,4 +1,5 @@
 var User = require('../../models/User');
+var logger = require('../../logger');
 
 function Registration(req, res) {
     logger('req :POST: /registration');

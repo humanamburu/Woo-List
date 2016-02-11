@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+
 module.exports = {
 
     entry: "./project/Client/build/main.js",
@@ -13,6 +15,13 @@ module.exports = {
         host: 'localhost',
         port: 8080,
         contentBase: __dirname + '/project/Client'
-    }
+    },
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            sourceMap: false,
+            mangle: false
+        })
+    ]
 
 };
