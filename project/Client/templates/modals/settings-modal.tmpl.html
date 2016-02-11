@@ -10,12 +10,13 @@
                            data-toggle="tooltip" data-placement="bottom" title="name">
                     <label for="name"><i class="fa fa-user"></i></label>
                 </div>
-                <div class="input-container">
+                <button ng-click="isPasswordChange = !isPasswordChange;" class="btn btn-red">Сменить пароль</button>
+                <div class="input-container password-change" ng-class="{true: 'hide-hard', false: ''}[!isPasswordChange]">
                     <input ng-model="user.password" type="password" id="auth-password" class="form-control"
                            placeholder="Изменить пароль" data-toggle="tooltip" data-placement="bottom" title="password">
                     <label for="auth-password"><i class="fa fa-lock"></i></label>
                 </div>
-                <div class="input-container">
+                <div class="input-container" ng-class="{true: 'hide-hard', false: ''}[!isPasswordChange]">
                     <input ng-model="user.subPassword" type="password" id="confirm_auth-password" class="form-control"
                            placeholder="Подтверждение пароля" data-toggle="tooltip" data-placement="bottom"
                            title="confirm password">
@@ -25,7 +26,7 @@
             <bs-alert></bs-alert>
             <div class="modal-footer">
                 <button ng-click="$hide()" class="btn btn-red">Отмена</button>
-                <button ng-click="saveSettings()" class="btn btn-blue">Сохранить</button>
+                <button ng-click="saveSettings(); isPasswordChange = false;" class="btn btn-blue">Сохранить</button>
             </div>
         </div>
     </div>

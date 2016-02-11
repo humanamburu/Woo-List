@@ -13,11 +13,14 @@ var Lists = angular.module('WunderlistControllers').controller('Lists', ['$scope
         password: '',
         subPassword: ''
     };
+
     $scope.newList = {
         name: ''
     };
 
     $scope.lists = [];
+
+    $scope.isPasswordChange = false;
 
     lists.get().success(function (res) {
         $scope.lists = res;

@@ -41740,11 +41740,14 @@ var main =
 	        password: '',
 	        subPassword: ''
 	    };
+	
 	    $scope.newList = {
 	        name: ''
 	    };
 	
 	    $scope.lists = [];
+	
+	    $scope.isPasswordChange = false;
 	
 	    lists.get().success(function (res) {
 	        $scope.lists = res;
