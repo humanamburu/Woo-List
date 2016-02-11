@@ -752,3 +752,7 @@ i.photo-icon {
 .password-change {
     margin-top: 20px;
 }
+
+.control-buttons button {
+    margin-bottom: 10px;
+}
