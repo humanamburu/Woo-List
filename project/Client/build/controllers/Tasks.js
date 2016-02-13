@@ -5,6 +5,8 @@ var Tasks = angular.module('WunderlistControllers').controller('Tasks', ['$scope
     $scope.newTask = {
         name: ''
     };
+    $scope.now = new Date();
+    $scope.hurry_up = true;
 
     $scope.current = $location.path().slice(32);
 
@@ -14,6 +16,10 @@ var Tasks = angular.module('WunderlistControllers').controller('Tasks', ['$scope
 
     tasks.get().success(function (res) {
         $scope.tasks = res;
+        $scope.tasks.map(function(item) {
+           item.date = new Date(item.date);
+        });
+        console.log($scope.tasks);
     });
 
     $scope.updateTask = function (task) {

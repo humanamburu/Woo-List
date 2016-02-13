@@ -410,7 +410,6 @@ body ul .task-input-li:hover {
 .round-btn:active.focus,
 .round-btn.active.focus {
     outline: none;
-    background-color: rgba(145, 0, 200, 0.8);;
     border: none;
     color: white;
 }
@@ -755,4 +754,11 @@ i.photo-icon {
 
 .control-buttons button {
     margin-bottom: 10px;
+}
+
+i.hurry-up {
+    position: absolute;
+    top: 12px;
+    left: 60px;
+    font-size: 18px;
 }

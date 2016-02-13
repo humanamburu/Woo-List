@@ -4,6 +4,7 @@
     <button class="btn round-btn" ng-class="{true: '', false: 'active'}[visibility]" ng-click="visibility=false;"><i
             class="fa fa-eye-slash"></i></button>
     <br>
+    <button class="btn round-btn" ng-click="hurry_up=!hurry_up;" ng-class="{true: '', false: 'active'}[!hurry_up]"><i class="fa fa-clock-o"></i></button>
     <button class="btn round-btn" ng-click="visibility=false;"><i class="fa fa-pie-chart"></i></button>
     <button class="btn round-btn" ng-click="visibility=false;"><i class="fa fa-line-chart"></i></button>
     <button class="btn round-btn" ng-click="visibility=false;"><i class="fa fa-calculator"></i></button>
@@ -15,22 +16,39 @@
                                      ng-model="newTask.name"
                                      class="task-input" type="text">
     </li>
-    <li class="am-fade" ng-repeat="task in tasks | filter:{done:false}"><i ng-click="updateTask(task)"
-                                                                           class="fa fa-thumb-tack thumb"></i><a
+    <li class="am-fade" ng-repeat="task in tasks | filter:{done:false}">
+        <i ng-click="updateTask(task)"
+           class="fa fa-thumb-tack thumb">
+
+        </i>
+        <i ng-if="now > task.date && hurry_up" class="fa fa-clock-o hurry-up"></i>
+        <a
             ng-href="#/lists/{{task.list}}/{{task._id}}"
             ng-class="{true: 'active-task', false: ''}[task._id === current]"
-            ng-click="updateSelected(task._id)">{{task.name}}</a><i class="delete-list fa fa-times delete-task"
-                                                                    ng-click="deleteTask(task._id)"></i>
+            ng-click="updateSelected(task._id)">{{task.name}}
+        </a>
+        <i class="delete-list fa fa-times delete-task"
+           ng-click="deleteTask(task._id)">
+        </i>
     </li>
     <li ng-class="{true: 'am-fade', false: ''}[visibility]" ng-hide="!visibility"
-        ng-repeat="task in tasks | filter:{done:true}"><i
+        ng-repeat="task in tasks | filter:{done:true}">
+        <i
             ng-click="updateTask(task)"
-            class="fa fa-thumb-tack thumb active-thumb"></i><a
+            class="fa fa-thumb-tack thumb active-thumb">
+
+        </i>
+        <a
             ng-class="{true: 'active-task', false: ''}[task._id === current]"
             ng-click="updateSelected(task._id)" ng-href="#/lists/{{task.list}}/{{task._id}}"
-            class="complete-task" href="">{{task.name}}</a><i
+            class="complete-task" href="">{{task.name}}
+        </a>
+        <i
             class="delete-list fa fa-times delete-task"
-            ng-click="deleteTask(task._id)"></i></li>
+            ng-click="deleteTask(task._id)">
+
+        </i>
+    </li>
 </ul>
 
 
