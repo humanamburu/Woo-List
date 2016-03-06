@@ -1,4 +1,7 @@
 var mongoose = require('mongoose');
+var tommorow = new Date();
+
+tommorow.setDate(tommorow.getDate() + 1);
 
 var Task = mongoose.Schema({
     list: {
@@ -17,7 +20,11 @@ var Task = mongoose.Schema({
     },
     date: {
         type: Date,
-        default: new Date()
+        default: tommorow
+    },
+    created: {
+      type: Date,
+      default: new Date()
     },
     description: {
         type: String,
