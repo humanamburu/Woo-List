@@ -19,8 +19,11 @@ module.exports = {
 
     plugins: [
         new webpack.optimize.UglifyJsPlugin({
-            sourceMap: false,
-            mangle: false
+            sourceMap: true,
+            mangle: false,
+            compress: {
+                warnings: false
+            }
         })
     ]
 

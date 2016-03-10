@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var tommorow = new Date();
-var SSH;
+
 tommorow.setDate(tommorow.getDate() + 1);
 
 var Task = mongoose.Schema({
