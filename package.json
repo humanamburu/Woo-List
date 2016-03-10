@@ -20,7 +20,9 @@
     "passport-local": "1.0.0",
     "cookie-parser": "1.4.0",
     "express-session": "1.12.1",
-    "connect-mongo": "1.1.0"
+    "connect-mongo": "1.1.0",
+    "file-stream-rotator": "0.0.6",
+    "morgan": "^1.7.0"
   },
   "devDependencies": {
     "webpack": "^1.12.9",

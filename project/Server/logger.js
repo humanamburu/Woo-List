@@ -5,7 +5,7 @@ var friendlyTime = function() {
 };
 
 var logger = function(log) {
-    console.log(friendlyTime() + ' * ' + log);
+    console.log(' * ' + log);
 };
 
 module.exports = logger;

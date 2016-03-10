@@ -7,18 +7,41 @@ var express = require('express'),
     session = require('express-session'),
     MongoStore = require('connect-mongo')(session),
     controllers = require('./project/Server/controllers/main.js'),
+    fs = require('fs'),
+    morgan = require('morgan'),
+    FileStreamRotator = require('file-stream-rotator'),
+    uuid = require('node-uuid'),
     logger = require('./project/Server/logger');
+
 
 logger('');
 logger('Running server...');
 var server = app.listen(8080);
-mongoose.connect(config.mongo, function (error) {
+mongoose.connect(config.mongo, function(error) {
     if (error) throw error;
 });
 
 logger('Server run at localhost:8080');
+
+//MORGAN SETUP
+var logDirectory = __dirname + '/log';
+fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+var accessLogStream = FileStreamRotator.getStream({
+    date_format: 'YYYYMMDD',
+    filename: logDirectory + '/access-%DATE%.log',
+    frequency: 'daily',
+    verbose: false
+});
+app.use(morgan(':method :url :response-time', {
+    stream: accessLogStream
+}));
+
+
+//MODULES FOR EXPRESS
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 logger('Parsers initial complete');
@@ -27,11 +50,10 @@ app.use(session({
     secret: 'wunderlist',
     saveUninitialized: false,
     maxAge: new Date(Date.now() + 3600000),
-    store: new MongoStore(
-        {
-            mongooseConnection: mongoose.connection,
-            touchAfter: 24 * 3600
-        })
+    store: new MongoStore({
+        mongooseConnection: mongoose.connection,
+        touchAfter: 24 * 3600
+    })
 }));
 
 logger('Passport initialize');
@@ -42,6 +64,8 @@ logger('');
 logger('Wait for requests...');
 logger('');
 
+
+//ENTRY POINTS
 app.use('/', express.static('./project/Client/'));
 
 app.post('/register', controllers.registration);
