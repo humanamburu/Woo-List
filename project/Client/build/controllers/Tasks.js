@@ -8,13 +8,20 @@ var Tasks = angular.module('WunderlistControllers').controller('Tasks', ['$modal
         };
         $scope.now = new Date();
         $scope.hurry_up = true;
-        
+
+        //CHARTS DATA
         $scope.pieData = [
             [3, 5, 20],
             [30, 20, 30],
             [280, 5, 40]
         ];
         $scope.pieLabels = ['Просроченые', 'Активные', 'Выполненые'];
+        $scope.lineLabels = ["January", "February", "March", "April", "May", "June", "July"];
+        $scope.lineSeries = ['Series A', 'Series B'];
+        $scope.lineData = [
+            [65, 59, 80, 81, 56, 55, 40],
+            [28, 48, 40, 19, 86, 27, 90]
+      ];
 
         $scope.current = $location.path().slice(32);
 
@@ -70,10 +77,21 @@ var Tasks = angular.module('WunderlistControllers').controller('Tasks', ['$modal
             show: false
         });
 
+        var LineChartModal = $modal({
+            scope: $scope,
+            templateUrl: 'templates/modals/line-chart.tmpl.html',
+            show: false
+        });
 
         $scope.showPieChartModal = function() {
             PieChartModal.$promise.then(PieChartModal.show);
         };
+
+        $scope.showLineChartModal = function() {
+            LineChartModal.$promise.then(LineChartModal.show);
+        };
+
+
 
     }
 ]);
