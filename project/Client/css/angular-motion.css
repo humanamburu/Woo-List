@@ -173,7 +173,6 @@
 }
 .modal-backdrop.am-fade,
 .aside-backdrop.am-fade {
-  background: rgba(0, 0, 0, 0.5);
   -webkit-animation-duration: 0.15s;
           animation-duration: 0.15s;
 }
@@ -1025,5 +1024,3 @@
             transform: translateX(-100%);
   }
 }
-
-

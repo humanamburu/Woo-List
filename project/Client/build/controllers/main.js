@@ -1,9 +1,9 @@
 var services = require('../services/main'),
-    ngAnimate = require('../../../../node_modules/angular-animate/angular-animate.js'),
-    ngStrap = require('../../../../node_modules/angular-strap/dist/angular-strap.js'),
-    ngStrapTpl = require('../../../../node_modules/angular-strap/dist/angular-strap.tpl.js');
+    ngAnimate = require('angular-animate'),
+    charts = require('angular-chart.js');
+    ngStrap = require('angular-strap');
 
-var controllers = angular.module('WunderlistControllers', ['WunderlistServices', 'ngAnimate', 'mgcrea.ngStrap']),
+var controllers = angular.module('WunderlistControllers', ['WunderlistServices', 'ngAnimate', 'mgcrea.ngStrap', 'chart.js']),
     Account = require('./Account'),
     Lists = require('./Lists'),
     Info = require('./Info'),

@@ -1,0 +1,33 @@
+<div class="modal">
+    <div class="big-modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header center">
+                <h2><i class="fa fa-pie-chart"></i>Статистика</h2>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body-chart-container">
+                    <h3><i class="fa fa-list"></i>По списку</h3>
+                    <canvas id="doughnut" class="chart chart-pie" chart-data="pieData[0]" chart-labels="pieLabels">
+                    </canvas>
+                    <div class="pie-content">Отображает текущее состояние конкретного спискам</div>
+                </div>
+                <div class="modal-body-chart-container">
+                    <h3><i class="fa fa-check"></i>Общая</h3>
+                    <canvas id="doughnut" class="chart chart-doughnut" chart-data="pieData[1]" chart-labels="pieLabels">
+                    </canvas>
+                    <div class="pie-content">Отображает общую статистику по спискам</div>
+                </div>
+                <div class="modal-body-chart-container">
+                    <h3><i class="fa fa-dot-circle-o"></i>По подзадачам</h3>
+                    <canvas id="doughnut" class="chart chart-pie" chart-data="pieData[2]" chart-labels="pieLabels">
+                    </canvas>
+                    <div class="pie-content">Отображает информацию по задачам списке</div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button ng-click="$hide();" class="btn btn-red">Закрыть</button>
+            </div>
+        </div>
+    </div>
+</div>
