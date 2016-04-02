@@ -11,14 +11,15 @@ function Authorization(req, res, next) {
       logger('res :STATUS ? 404: /authorization');
       return res.sendStatus(404);
     }
-    req.logIn(user, (err) => {
-      if (err) {
+    req.logIn(user, (e) => {
+      if (e) {
         logger('res :STATUS ? 400: /authorization');
         return res.sendStatus(400);
       }
       logger('res :STATUS ? 200: /authorization');
       return res.status(200).send(user);
     });
+    return false;
   })(req, res, next);
 }
 
