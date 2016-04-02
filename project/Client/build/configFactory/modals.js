@@ -39,4 +39,20 @@ modals.settingsModal = function create($scope) {
   };
 };
 
+modals.pieChartModal = function create($scope) {
+  return {
+    scope: $scope,
+    templateUrl: 'templates/modals/pie-chart.tmpl.html',
+    show: false
+  };
+};
+
+modals.lineChartModal = function create($scope) {
+  return {
+    scope: $scope,
+    templateUrl: 'templates/modals/line-chart.tmpl.html',
+    show: false
+  };
+};
+
 module.exports = modals;

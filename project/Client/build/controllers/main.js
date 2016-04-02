@@ -1,13 +1,17 @@
-var services = require('../services/main'),
-    ngAnimate = require('angular-animate'),
-    charts = require('angular-chart.js'),
-    ngStrap = require('angular-strap'),
-    ngStrapTpl = require('angular-strap/dist/angular-strap.tpl.js');
+/* eslint-disable no-unused-vars*/
+const services = require('../services/main');
+const ngAnimate = require('angular-animate');
+const charts = require('angular-chart.js');
+const ngStrap = require('angular-strap');
+const ngStrapTpl = require('angular-strap/dist/angular-strap.tpl.js');
+const angular = require('angular');
 
-var controllers = angular.module('WunderlistControllers', ['WunderlistServices', 'ngAnimate', 'mgcrea.ngStrap', 'chart.js']),
-    Account = require('./Account'),
-    Lists = require('./Lists'),
-    Info = require('./Info'),
-    Tasks = require('./Tasks');
+const controllers = angular.module('WunderlistControllers',
+  ['WunderlistServices', 'ngAnimate', 'mgcrea.ngStrap', 'chart.js']);
+
+const Account = require('./Account');
+const Lists = require('./Lists');
+const Info = require('./Info');
+const Tasks = require('./Tasks');
 
 module.exports = controllers;
