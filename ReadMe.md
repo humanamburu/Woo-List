@@ -16,7 +16,7 @@ Whether you’re updating your tasks on the go or in the office, Real-time Sync 
 ```sh
 $ npm install
 ```
--Build frontend
+- Build frontend
 ```sh
 $ webpack
 ```
@@ -26,7 +26,7 @@ $ webpack
 $ node application
 ```
 
--Open application
+- Open application
 ```sh
 http://localhost:8080
 ```
