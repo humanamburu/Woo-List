@@ -1,6 +1,6 @@
 # WooList
 
-Simply application for task tracking.
+Simple application for task tracking.
 ### Easy to use
 Wunderlist provides an easy to use interface for accessing profile data and the data storage functions. Now don't forget anything!
 ### Free
