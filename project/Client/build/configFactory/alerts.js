@@ -57,4 +57,18 @@ alerts.wrongData = function create($scope) {
   };
 };
 
+alerts.succesDataSave = function create($scope) {
+  return {
+    scope: $scope,
+    title: 'Успех!',
+    content: 'Данные сохранены',
+    animation: 'am-flip-x',
+    type: 'success success-center',
+    show: true,
+    duration: 3
+  };
+};
+
+
+
 module.exports = alerts;

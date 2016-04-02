@@ -4,12 +4,7 @@ const alerts = require('../configFactory/alerts');
 
 /* eslint-disable no-param-reassign, max-len */
 const Account = angular.module('WunderlistControllers').controller('Account', [
-  '$scope',
-  'personals',
-  '$modal',
-  '$alert',
-  '$location',
-  '$state',
+  '$scope', 'personals', '$modal', '$alert', '$location', '$state',
   ($scope, personals, $modal, $alert, $location, $state) => {
     $scope.newUser = {
       name: '',
