@@ -17,14 +17,14 @@ module.exports = {
         contentBase: __dirname + '/project/Client'
     },
 
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin({
-            sourceMap: true,
-            mangle: false,
-            compress: {
-                warnings: false
-            }
-        })
-    ]
+    // plugins: [
+    //     new webpack.optimize.UglifyJsPlugin({
+    //         sourceMap: true,
+    //         mangle: false,
+    //         compress: {
+    //             warnings: false
+    //         }
+    //     })
+    // ]
 
 };

@@ -1,130 +1,142 @@
-var Account = angular.module('WunderlistControllers').controller('Account', ['$scope', 'personals', '$modal', '$alert', '$location', '$state', function ($scope, personals, $modal, $alert, $location, $state) {
+const angular = require('angular');
 
+/* eslint-disable no-param-reassign, no-unused-vars */
+const Account = angular.module('WunderlistControllers').controller('Account', [
+  '$scope',
+  'personals',
+  '$modal',
+  '$alert',
+  '$location',
+  '$state',
+  ($scope, personals, $modal, $alert, $location, $state) => {
     $scope.newUser = {
-        name: "",
-        email: "",
-        password: "",
-        subPassword: ""
+      name: '',
+      email: '',
+      password: '',
+      subPassword: '',
     };
+
     $scope.authUser = {
-        username: "",
-        password: ""
+      username: '',
+      password: '',
     };
 
-    $scope.clearNewUser = function () {
-        $scope.newUser.name = "";
-        $scope.newUser.email = "";
-        $scope.newUser.password = "";
-        $scope.newUser.subPassword = "";
+    $scope.clearNewUser = function clearNewUser() {
+      $scope.newUser.name = '';
+      $scope.newUser.email = '';
+      $scope.newUser.password = '';
+      $scope.newUser.subPassword = '';
     };
 
-    var RegModal = $modal({
-        scope: $scope,
-        templateUrl: 'templates/modals/registration-modal.tmpl.html',
-        show: false,
-        animation: 'am-fade-and-slide-top'
+    const RegModal = $modal({
+      scope: $scope,
+      templateUrl: 'templates/modals/registration-modal.tmpl.html',
+      show: false,
+      animation: 'am-fade-and-slide-top'
     });
 
-    var AuthModal = $modal({
-        scope: $scope,
-        templateUrl: 'templates/modals/auth-modal.tmpl.html',
-        show: false,
-        animation: 'am-fade-and-slide-top'
+    const AuthModal = $modal({
+      scope: $scope,
+      templateUrl: 'templates/modals/auth-modal.tmpl.html',
+      show: false,
+      animation: 'am-fade-and-slide-top'
     });
 
-    $scope.showRegModal = function () {
-        $state.go('index.reg');
-        RegModal.$promise.then(RegModal.show);
+    $scope.showRegModal = function showRegModal() {
+      $state.go('index.reg');
+      RegModal.$promise.then(RegModal.show);
     };
 
-    $scope.showAuthModal = function () {
-        $state.go('index.auth');
-        AuthModal.$promise.then(AuthModal.show);
+    $scope.showAuthModal = function showAuthModal() {
+      $state.go('index.auth');
+      AuthModal.$promise.then(AuthModal.show);
     };
 
-    if($location.path() === '/index/reg') {
-        $scope.showRegModal();
+    if ($location.path() === '/index/reg') {
+      $scope.showRegModal();
     }
-    if($location.path() === '/index/auth') {
-        $scope.showAuthModal();
+    if ($location.path() === '/index/auth') {
+      $scope.showAuthModal();
     }
-    $scope.registration = function () {
-        var error, success;
-        if ($scope.newUser.name === "" || $scope.newUser.email === "" || $scope.newUser.password === "" || $scope.newUser.subPassword === "") {
-            error = $alert({
-                title: 'Ошибка! ',
-                content: 'Заполните все поля!',
-                placement: 'top',
-                type: 'danger',
-                show: true,
-                container: 'bs-alert',
-                animation: 'am-flip-x',
-                duration: 2
-            });
-        } else if ($scope.newUser.password != $scope.newUser.subPassword) {
-            error = $alert({
-                title: 'Ошибка! ',
-                content: 'Пароли не совпадают!',
-                placement: 'top',
-                type: 'danger',
-                show: true,
-                container: 'bs-alert',
-                animation: 'am-flip-x',
-                duration: 2
-            });
-        } else {
-            personals.register($scope.newUser)
-                .success(function () {
-                    RegModal.$promise.then(RegModal.hide);
-                    $scope.clearNewUser();
-                    success = $alert({
-                        title: 'Успех!',
-                        content: 'Превосходно! Теперь можно выполнить вход :)',
-                        animation: 'am-flip-x',
-                        type: 'success success-center',
-                        show: true,
-                        duration: 3
-                    });
-                    $state.go('index');
-                })
-                .error(function () {
-                    error = $alert({
-                        title: 'Ошибка! ',
-                        content: 'Некорректные данные. Попробуйте еще раз',
-                        placement: 'top',
-                        type: 'danger',
-                        show: true,
-                        container: 'bs-alert',
-                        animation: 'am-flip-x',
-                        duration: 2
-                    });
-                });
-        }
 
-    };
-
-    $scope.auth = function () {
-        var error;
-        personals.authorization($scope.authUser)
-            .success(function (res) {
-                personals.user = res;
-                AuthModal.$promise.then(AuthModal.hide);
-                $location.path('/lists');
+    $scope.registration = function registration() {
+      if ($scope.newUser.name === '' ||
+          $scope.newUser.email === '' ||
+          $scope.newUser.password === '' ||
+          $scope.newUser.subPassword === ''
+        ) {
+        const error = $alert({
+          title: 'Ошибка! ',
+          content: 'Заполните все поля!',
+          placement: 'top',
+          type: 'danger',
+          show: true,
+          container: 'bs-alert',
+          animation: 'am-flip-x',
+          duration: 2
+        });
+      } else if ($scope.newUser.password !== $scope.newUser.subPassword) {
+        const error = $alert({
+          title: 'Ошибка! ',
+          content: 'Пароли не совпадают!',
+          placement: 'top',
+          type: 'danger',
+          show: true,
+          container: 'bs-alert',
+          animation: 'am-flip-x',
+          duration: 2
+        });
+      } else {
+        personals.register($scope.newUser)
+            .success(() => {
+              RegModal.$promise.then(RegModal.hide);
+              $scope.clearNewUser();
+              const success = $alert({
+                title: 'Успех!',
+                content: 'Превосходно! Теперь можно выполнить вход :)',
+                animation: 'am-flip-x',
+                type: 'success success-center',
+                show: true,
+                duration: 3
+              });
+              $state.go('index');
             })
-            .error(function () {
-                error = $alert({
-                    title: 'Ошибка! ',
-                    content: 'Некорректные данные',
-                    placement: 'top',
-                    type: 'danger',
-                    show: true,
-                    container: 'bs-alert',
-                    animation: 'am-flip-x',
-                    duration: 2
-                });
+            .error(() => {
+              const error = $alert({
+                title: 'Ошибка! ',
+                content: 'Некорректные данные. Попробуйте еще раз',
+                placement: 'top',
+                type: 'danger',
+                show: true,
+                container: 'bs-alert',
+                animation: 'am-flip-x',
+                duration: 2
+              });
             });
+      }
     };
 
-}]);
+    $scope.auth = function auth() {
+      personals.authorization($scope.authUser)
+        .success((res) => {
+          personals.user = res;
+          AuthModal.$promise.then(AuthModal.hide);
+          $location.path('/lists');
+        })
+        .error(() => {
+          const error = $alert({
+            title: 'Ошибка! ',
+            content: 'Некорректные данные',
+            placement: 'top',
+            type: 'danger',
+            show: true,
+            container: 'bs-alert',
+            animation: 'am-flip-x',
+            duration: 2
+          });
+        });
+    };
+  }
+]);
 
 module.exports = Account;
