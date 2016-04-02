@@ -1,29 +1,29 @@
-var User = require('../../models/User'),
-    Task = require('../../models/Task');
-var logger = require('../../logger');
+const User = require('../../models/User');
+const Task = require('../../models/Task');
+const logger = require('../../logger');
 
-var addTask = function (req, res) {
-    User.findById(req.body.userId, function (error, user) {
-        logger('req :POST: /task');
-        if (error) {
-            res.sendStatus(401);
-            return;
-        }
-        var task = new Task({
-            list: req.body.listId,
-            name: req.body.name,
-            creator: req.body.userId,
-            invites: []
-        });
+const addTask = function addTask(req, res) {
+  User.findById(req.body.userId, (error, user) => {
+    logger('req :POST: /task');
+    if (error) {
+      return res.sendStatus(401);
+    }
 
-        task.save(function (error) {
-            if (error) {
-                res.sendStatus(400);
-                return;
-            }
-        });
-        res.status(200).send(task);
+    const task = new Task({
+      list: req.body.listId,
+      name: req.body.name,
+      creator: req.body.userId,
+      invites: []
     });
+
+    task.save((err) => {
+      if (err) {
+        return res.sendStatus(400);
+      }
+      return true;
+    });
+    return res.status(200).send(task);
+  });
 };
 
 module.exports = addTask;

@@ -1,28 +1,28 @@
-var Task = require('../../../models/Task'),
-    Subtask = require('../../../models/Subtask');
-var logger = require('../../../logger');
+const Task = require('../../../models/Task');
+const Subtask = require('../../../models/Subtask');
+const logger = require('../../../logger');
 
-var addTask = function (req, res) {
-    Task.findById(req.body.taskId, function (error, task) {
-        logger('req :POST: /task/subtask');
-        if (error) {
-            res.sendStatus(401);
-            return;
-        }
-        var subtask = new Subtask({
-            task: task._id,
-            name: req.body.name,
-            done: req.body.done
-        });
+const addTask = function addTask(req, res) {
+  Task.findById(req.body.taskId, (error, task) => {
+    logger('req :POST: /task/subtask');
 
-        subtask.save(function (error) {
-            if (error) {
-                res.sendStatus(400);
-                return;
-            }
-        });
-        res.status(200).send(subtask);
+    if (error) {
+      return res.sendStatus(401);
+    }
+    const subtask = new Subtask({
+      task: task._id,
+      name: req.body.name,
+      done: req.body.done
     });
+    subtask.save((err) => {
+      if (err) {
+        return res.sendStatus(400);
+      }
+      return true;
+    });
+
+    return res.status(200).send(subtask);
+  });
 };
 
 module.exports = addTask;
