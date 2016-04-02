@@ -1,6 +1,8 @@
 const angular = require('angular');
+const modals = require('../configFactory/modals');
+const alerts = require('../configFactory/alerts');
 
-/* eslint-disable no-param-reassign, no-unused-vars */
+/* eslint-disable no-param-reassign, max-len */
 const Account = angular.module('WunderlistControllers').controller('Account', [
   '$scope',
   'personals',
@@ -28,19 +30,8 @@ const Account = angular.module('WunderlistControllers').controller('Account', [
       $scope.newUser.subPassword = '';
     };
 
-    const RegModal = $modal({
-      scope: $scope,
-      templateUrl: 'templates/modals/registration-modal.tmpl.html',
-      show: false,
-      animation: 'am-fade-and-slide-top'
-    });
-
-    const AuthModal = $modal({
-      scope: $scope,
-      templateUrl: 'templates/modals/auth-modal.tmpl.html',
-      show: false,
-      animation: 'am-fade-and-slide-top'
-    });
+    const RegModal = $modal(modals.registrationModal($scope));
+    const AuthModal = $modal(modals.authorizationModal($scope));
 
     $scope.showRegModal = function showRegModal() {
       $state.go('index.reg');
@@ -60,58 +51,21 @@ const Account = angular.module('WunderlistControllers').controller('Account', [
     }
 
     $scope.registration = function registration() {
-      if ($scope.newUser.name === '' ||
-          $scope.newUser.email === '' ||
-          $scope.newUser.password === '' ||
-          $scope.newUser.subPassword === ''
-        ) {
-        const error = $alert({
-          title: 'Ошибка! ',
-          content: 'Заполните все поля!',
-          placement: 'top',
-          type: 'danger',
-          show: true,
-          container: 'bs-alert',
-          animation: 'am-flip-x',
-          duration: 2
-        });
-      } else if ($scope.newUser.password !== $scope.newUser.subPassword) {
-        const error = $alert({
-          title: 'Ошибка! ',
-          content: 'Пароли не совпадают!',
-          placement: 'top',
-          type: 'danger',
-          show: true,
-          container: 'bs-alert',
-          animation: 'am-flip-x',
-          duration: 2
-        });
+      const user = $scope.newUser;
+      if (user.name === '' || user.email === '' || user.password === '' || user.subPassword === '') {
+        $alert(alerts.fillAllInputs($scope));
+      } else if (user.password !== user.subPassword) {
+        $alert(alerts.notIdentPasswords($scope));
       } else {
         personals.register($scope.newUser)
             .success(() => {
               RegModal.$promise.then(RegModal.hide);
               $scope.clearNewUser();
-              const success = $alert({
-                title: 'Успех!',
-                content: 'Превосходно! Теперь можно выполнить вход :)',
-                animation: 'am-flip-x',
-                type: 'success success-center',
-                show: true,
-                duration: 3
-              });
+              $alert(alerts.succesReg());
               $state.go('index');
             })
             .error(() => {
-              const error = $alert({
-                title: 'Ошибка! ',
-                content: 'Некорректные данные. Попробуйте еще раз',
-                placement: 'top',
-                type: 'danger',
-                show: true,
-                container: 'bs-alert',
-                animation: 'am-flip-x',
-                duration: 2
-              });
+              $alert(alerts.wrongData());
             });
       }
     };
@@ -124,16 +78,7 @@ const Account = angular.module('WunderlistControllers').controller('Account', [
           $location.path('/lists');
         })
         .error(() => {
-          const error = $alert({
-            title: 'Ошибка! ',
-            content: 'Некорректные данные',
-            placement: 'top',
-            type: 'danger',
-            show: true,
-            container: 'bs-alert',
-            animation: 'am-flip-x',
-            duration: 2
-          });
+          $alert(alerts.wrongData());
         });
     };
   }
