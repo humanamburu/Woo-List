@@ -1,4 +1,4 @@
-var controllers = {};
+const controllers = {};
 
 controllers.auth = require('./auth/AuthCheck');
 controllers.registration = require('./auth/Registration');
