@@ -4,7 +4,7 @@ module.exports = {
 
     entry: "./project/Client/build/main.js",
     output: {
-        path: __dirname + "/project/Client/js",
+        path: __dirname + "/project/Client/scripts",
         filename: "script.bundle.js",
         library: "main"
     },

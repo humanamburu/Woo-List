@@ -26,6 +26,9 @@
     "passport-local": "1.0.0"
   },
   "devDependencies": {
+    "eslint": "^2.6.0",
+    "eslint-config-airbnb": "^6.2.0",
+    "eslint-plugin-react": "^4.2.3",
     "webpack": "^1.12.9",
     "webpack-dev-server": "latest"
   }
