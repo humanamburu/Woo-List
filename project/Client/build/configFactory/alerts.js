@@ -69,6 +69,19 @@ alerts.succesDataSave = function create($scope) {
   };
 };
 
+alerts.incorrectNameOrEmail = function create($scope) {
+  return {
+    scope: $scope,
+    title: 'Error! ',
+    content: 'Incorrect name or email!',
+    placement: 'top',
+    type: 'danger',
+    show: true,
+    container: 'bs-alert',
+    animation: 'am-flip-x',
+    duration: 2
+  };
+};
 
 
 module.exports = alerts;

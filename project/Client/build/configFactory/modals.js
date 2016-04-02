@@ -21,4 +21,22 @@ modals.authorizationModal = function create($scope) {
   };
 };
 
+modals.newListModal = function create($scope) {
+  return {
+    scope: $scope,
+    templateUrl: 'templates/modals/newList-modal.tmpl.html',
+    show: false,
+    animation: 'am-fade-and-slide-top'
+  };
+};
+
+modals.settingsModal = function create($scope) {
+  return {
+    scope: $scope,
+    templateUrl: 'templates/modals/settings-modal.tmpl.html',
+    show: false,
+    animation: 'am-fade-and-slide-top'
+  };
+};
+
 module.exports = modals;
