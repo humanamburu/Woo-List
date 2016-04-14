@@ -1,43 +1,43 @@
 var tasks = angular.module('WunderlistServices').factory('tasks', ['$http', 'personals', 'lists', function ($http, personals, lists) {
     return {
-        add: function (name) {
-            var task = {
+        add: (name) => {
+            const task = {
                 name: name,
                 userId: personals.user._id,
                 listId: lists.currentList
             };
             return $http.post('/task', task);
         },
-        get: function () {
+        get: () => {
             return $http.get('/tasks?id=' + lists.currentList);
         },
-        getSingle: function (id) {
+        getSingle: (id) => {
             return $http.get('/task?id=' + id);
         },
 
-        delete: function (id) {
+        delete: (id) => {
             return $http.delete('/task?id=' + id);
         },
 
-        updateTask: function (toggle,id, desc) {
+        updateTask: (toggle,id, desc) => {
             return $http.put('/task?id=' + id + '&desc=' + desc + '&toggle=' + toggle);
         },
 
-        updateDate: function (id, date) {
+        updateDate: (id, date) => {
             return $http.put('/task/date?id=' + id + '&date=' + date);
         },
-        updateImage: function (id, image) {
+        updateImage: (id, image) => {
             return $http.put('/task/image?id=' + id + '&img=' + image);
         },
-        addSubtask: function (data) {
+        addSubtask: (data) => {
             return $http.post('/task/subtask', data);
         },
-        toggleSubtask: function (id) {
+        toggleSubtask: (id) => {
             return $http.put('/task/subtask?id=' + id);
         },
-        deleteSubtask: function (id) {
+        deleteSubtask: (id) => {
             return $http.delete('/task/subtask?id=' + id);
-        }
+        },
     };
 }]);
 
