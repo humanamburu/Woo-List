@@ -18,7 +18,6 @@ const Tasks = angular.module('WunderlistControllers').controller('Tasks', [
     $scope.pieData = [
       [3,  5,  20],
       [30, 20, 30],
-      [280, 5, 40],
     ];
     $scope.pieLabels = ['Просроченые', 'Активные', 'Выполненые'];
     $scope.lineLabels = ["January", "February", "March", "April", "May", "June", "July"];
@@ -71,7 +70,11 @@ const Tasks = angular.module('WunderlistControllers').controller('Tasks', [
     const PieChartModal = $modal(modals.pieChartModal($scope));
     const LineChartModal = $modal(modals.lineChartModal($scope));
     $scope.showPieChartModal = function showPieChartModal() {
-      PieChartModal.$promise.then(PieChartModal.show);
+      tasks.getPieData($stateParams.list)
+        .success((result) => {
+          $scope.pieData = result;
+          PieChartModal.$promise.then(PieChartModal.show);
+        });
     };
 
     $scope.showLineChartModal = function showLineChartModal() {

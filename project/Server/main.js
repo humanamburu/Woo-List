@@ -90,4 +90,6 @@ app.put('/task/subtask', controllers.toggleSubtask);
 app.post('/task/subtask', controllers.addSubtask);
 app.delete('/task/subtask', controllers.deleteSubtask);
 
+app.get('/pieStatistic', controllers.statistic.pie);
+
 module.exports = app;

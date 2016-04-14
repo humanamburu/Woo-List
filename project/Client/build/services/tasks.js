@@ -38,6 +38,9 @@ var tasks = angular.module('WunderlistServices').factory('tasks', ['$http', 'per
         deleteSubtask: (id) => {
             return $http.delete('/task/subtask?id=' + id);
         },
+        getPieData: (id) => {
+            return $http.get('/pieStatistic?id=' + id);
+        }
     };
 }]);
 
