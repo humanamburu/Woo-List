@@ -2,6 +2,7 @@ const controllers = {};
 controllers.statistic = {};
 
 controllers.statistic.pie = require('./statistic/pie');
+controllers.statistic.line = require('./statistic/line');
 
 controllers.auth = require('./auth/AuthCheck');
 controllers.registration = require('./auth/Registration');

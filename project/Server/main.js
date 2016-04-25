@@ -91,5 +91,6 @@ app.post('/task/subtask', controllers.addSubtask);
 app.delete('/task/subtask', controllers.deleteSubtask);
 
 app.get('/pieStatistic', controllers.statistic.pie);
+app.get('/lineStatistic', controllers.statistic.line);
 
 module.exports = app;

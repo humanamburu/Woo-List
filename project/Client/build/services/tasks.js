@@ -40,6 +40,9 @@ var tasks = angular.module('WunderlistServices').factory('tasks', ['$http', 'per
         },
         getPieData: (id) => {
             return $http.get('/pieStatistic?id=' + id);
+        },
+        getLineData: (id) => {
+            return $http.get('/lineStatistic?id=' + id);
         }
     };
 }]);
