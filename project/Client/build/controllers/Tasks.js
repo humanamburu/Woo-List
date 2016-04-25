@@ -21,7 +21,7 @@ const Tasks = angular.module('WunderlistControllers').controller('Tasks', [
     ];
     $scope.pieLabels = ['Просроченые', 'Активные', 'Выполненые'];
     $scope.lineLabels = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь"];
-    $scope.lineSeries = ['Выполнено заданий', 'Всего выполнено заданий'];
+    $scope.lineSeries = ['Выполнено','Просрочено', 'Осталось'];
     $scope.lineData = [];
 
     $scope.current = $location.path().slice(32);
@@ -78,6 +78,7 @@ const Tasks = angular.module('WunderlistControllers').controller('Tasks', [
       tasks.getLineData($stateParams.list)
         .success((result) => {
           $scope.lineData = result;
+          console.log(result);
           LineChartModal.$promise.then(LineChartModal.show);
         });
     };

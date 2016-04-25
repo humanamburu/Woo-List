@@ -55,4 +55,12 @@ modals.lineChartModal = function create($scope) {
   };
 };
 
+modals.calculatorModal = function create($scope) {
+  return {
+    scope: $scope,
+    templateUrl: 'templates/modals/calculator.tmpl.html',
+    show: false
+  };
+};
+
 module.exports = modals;
