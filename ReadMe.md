@@ -21,7 +21,7 @@ $ npm install
 $ webpack
 ```
 - Start and configure MongoDB
-- ```sh
+```sh
 Server/config.json
 ```
 
